@@ -193,7 +193,7 @@
         <!--Detailed View Controller-->
         <scene sceneID="blW-dO-YNV">
             <objects>
-                <viewController id="ks1-m2-vXu" customClass="DetailedViewController" customModule="Nasa_Pics" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailedVC" id="ks1-m2-vXu" customClass="DetailedViewController" customModule="Nasa_Pics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3qs-1U-kSf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

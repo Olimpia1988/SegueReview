@@ -57,6 +57,27 @@ class PicturesViewController: UIViewController {
   }
   
   
+  
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//    switch segue.identifier {
+//    case "DataSegue":
+//          guard let indexPath = myTableView.indexPathForSelectedRow,
+//            let destinationVC = segue.destination as? DetailedViewController else { fatalError("indexPath error, detailedVC nil") }
+//          let dataToSend = resultPicture[indexPath.row]
+//          let imageToSend = pictures[indexPath.row]
+//          destinationVC.pictureData = dataToSend
+//          destinationVC.currentNasaImage = imageToSend
+//    default:
+//      fatalError("Segue id error")
+//    }
+//
+//
+//
+//  }
+  
+  
+  
 }
 
 extension PicturesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -79,6 +100,21 @@ extension PicturesViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 400
   }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    
+    let destination = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailedVC") as! DetailedViewController
+    
+    let singleObject = resultPicture[indexPath.row]
+    let singleImage = pictures[indexPath.row]
+    destination.currentNasaImage = singleImage
+    destination.pictureData = singleObject
+
+    
+    navigationController?.pushViewController(destination, animated: false)
+  }
+  
   
 }
 
