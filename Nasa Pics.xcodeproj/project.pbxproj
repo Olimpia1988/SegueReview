@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1206B8EF21DD474800D30519 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206B8EE21DD474800D30519 /* Errors.swift */; };
+		1206B8EF21DD474800D30519 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206B8EE21DD474800D30519 /* AppError.swift */; };
 		1206B8F721DD4A3A00D30519 /* NasaAPIPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206B8F621DD4A3A00D30519 /* NasaAPIPhotos.swift */; };
 		1206B8F921DD687000D30519 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206B8F821DD687000D30519 /* ImageHelper.swift */; };
-		1206B8FB21DDB6BA00D30519 /* SecondModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206B8FA21DDB6BA00D30519 /* SecondModel.swift */; };
+		1206B8FB21DDB6BA00D30519 /* DailyPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206B8FA21DDB6BA00D30519 /* DailyPhotoModel.swift */; };
 		1206B8FD21DE677300D30519 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206B8FC21DE677300D30519 /* DetailedViewController.swift */; };
 		1206B8FF21DE784100D30519 /* PictureOfTheDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206B8FE21DE784100D30519 /* PictureOfTheDayViewController.swift */; };
 		1206B90321DE7A4000D30519 /* DayPhotoApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206B90221DE7A4000D30519 /* DayPhotoApiClient.swift */; };
@@ -22,13 +22,14 @@
 		1221810421D9BB16007A0104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1221810321D9BB16007A0104 /* Assets.xcassets */; };
 		1221810721D9BB16007A0104 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1221810521D9BB16007A0104 /* LaunchScreen.storyboard */; };
 		1221810F21D9BD15007A0104 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221810E21D9BD15007A0104 /* Model.swift */; };
+		12C0A700245C585200505668 /* PicturesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0A6FF245C585200505668 /* PicturesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1206B8EE21DD474800D30519 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		1206B8EE21DD474800D30519 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		1206B8F621DD4A3A00D30519 /* NasaAPIPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaAPIPhotos.swift; sourceTree = "<group>"; };
 		1206B8F821DD687000D30519 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
-		1206B8FA21DDB6BA00D30519 /* SecondModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondModel.swift; sourceTree = "<group>"; };
+		1206B8FA21DDB6BA00D30519 /* DailyPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPhotoModel.swift; sourceTree = "<group>"; };
 		1206B8FC21DE677300D30519 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		1206B8FE21DE784100D30519 /* PictureOfTheDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureOfTheDayViewController.swift; sourceTree = "<group>"; };
 		1206B90221DE7A4000D30519 /* DayPhotoApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPhotoApiClient.swift; sourceTree = "<group>"; };
@@ -42,6 +43,7 @@
 		1221810621D9BB16007A0104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1221810821D9BB16007A0104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1221810E21D9BD15007A0104 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		12C0A6FF245C585200505668 /* PicturesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,6 @@
 			children = (
 				1206B8FE21DE784100D30519 /* PictureOfTheDayViewController.swift */,
 				122180FE21D9BB12007A0104 /* PicturesViewController.swift */,
-				1206B92221DE88D400D30519 /* SecondImageHelper.swift */,
 				1206B8FC21DE677300D30519 /* DetailedViewController.swift */,
 			);
 			path = Controllers;
@@ -69,10 +70,9 @@
 		1206B8F121DD480E00D30519 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1206B8F621DD4A3A00D30519 /* NasaAPIPhotos.swift */,
-				1206B8EE21DD474800D30519 /* Errors.swift */,
 				1221810E21D9BD15007A0104 /* Model.swift */,
-				1206B8F821DD687000D30519 /* ImageHelper.swift */,
+				1206B8EE21DD474800D30519 /* AppError.swift */,
+				1206B8FA21DDB6BA00D30519 /* DailyPhotoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -81,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				1221810021D9BB12007A0104 /* Main.storyboard */,
+				12C0A6FF245C585200505668 /* PicturesCell.swift */,
 				1221810521D9BB16007A0104 /* LaunchScreen.storyboard */,
 				1206B93721DEC34200D30519 /* LaunchScreenViewController.swift */,
 				1221810321D9BB16007A0104 /* Assets.xcassets */,
@@ -107,15 +108,25 @@
 		122180FB21D9BB12007A0104 /* Nasa Pics */ = {
 			isa = PBXGroup;
 			children = (
+				1206B8F821DD687000D30519 /* ImageHelper.swift */,
+				12C0A6FE245C51A900505668 /* Networking */,
 				1206B8F121DD480E00D30519 /* Model */,
-				1206B90221DE7A4000D30519 /* DayPhotoApiClient.swift */,
-				1206B8FA21DDB6BA00D30519 /* SecondModel.swift */,
-				1206B8F321DD489400D30519 /* Views */,
 				1206B8F021DD47D000D30519 /* Controllers */,
+				1206B8F321DD489400D30519 /* Views */,
 				1221810821D9BB16007A0104 /* Info.plist */,
 				122180FC21D9BB12007A0104 /* AppDelegate.swift */,
 			);
 			path = "Nasa Pics";
+			sourceTree = "<group>";
+		};
+		12C0A6FE245C51A900505668 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1206B8F621DD4A3A00D30519 /* NasaAPIPhotos.swift */,
+				1206B90221DE7A4000D30519 /* DayPhotoApiClient.swift */,
+				1206B92221DE88D400D30519 /* SecondImageHelper.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1221810F21D9BD15007A0104 /* Model.swift in Sources */,
+				12C0A700245C585200505668 /* PicturesCell.swift in Sources */,
 				1206B8FF21DE784100D30519 /* PictureOfTheDayViewController.swift in Sources */,
 				122180FF21D9BB12007A0104 /* PicturesViewController.swift in Sources */,
 				1206B8FD21DE677300D30519 /* DetailedViewController.swift in Sources */,
@@ -197,8 +209,8 @@
 				1206B92321DE88D400D30519 /* SecondImageHelper.swift in Sources */,
 				122180FD21D9BB12007A0104 /* AppDelegate.swift in Sources */,
 				1206B90321DE7A4000D30519 /* DayPhotoApiClient.swift in Sources */,
-				1206B8FB21DDB6BA00D30519 /* SecondModel.swift in Sources */,
-				1206B8EF21DD474800D30519 /* Errors.swift in Sources */,
+				1206B8FB21DDB6BA00D30519 /* DailyPhotoModel.swift in Sources */,
+				1206B8EF21DD474800D30519 /* AppError.swift in Sources */,
 				1206B93821DEC34200D30519 /* LaunchScreenViewController.swift in Sources */,
 				1206B8F921DD687000D30519 /* ImageHelper.swift in Sources */,
 			);

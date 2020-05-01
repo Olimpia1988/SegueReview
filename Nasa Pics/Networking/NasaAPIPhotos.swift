@@ -1,11 +1,3 @@
-//
-//  NasaAPIPhotos.swift
-//  Nasa Pics
-//
-//  Created by Olimpia on 1/2/19.
-//  Copyright © 2019 Olimpia. All rights reserved.
-//
-
 import Foundation
 
 final class NasaAPIClient {

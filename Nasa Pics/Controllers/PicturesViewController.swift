@@ -1,98 +1,91 @@
-//
-//  ViewController.swift
-//  Nasa Pics
-//
-//  Created by Olimpia on 12/30/18.
-//  Copyright © 2018 Olimpia. All rights reserved.
-//
 
 import UIKit
 
 class PicturesViewController: UIViewController {
-    
-   
-    private var resultPicture = [NasaPhotos.PhotosInfo]()
-    
-    
-private var pictures = [UIImage](){
+  
+  
+  private var resultPicture = [NasaPhotos.PhotosInfo]() {
     didSet {
-        DispatchQueue.main.async {
-            self.myTableView.reloadData() 
-            
+      DispatchQueue.main.async {
+        self.myTableView.reloadData()
+      }
+    }
+  }
+  
+  
+  private var pictures = [UIImage](){
+    didSet {
+      DispatchQueue.main.async {
+        self.myTableView.reloadData() 
+        
+      }
+      
+    }
+  }
+  
+  
+  @IBOutlet weak var myTableView: UITableView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    giveUsTheData()
+    delegationSetup()
+  }
+  
+  func delegationSetup() {
+    myTableView.dataSource = self
+    myTableView.delegate = self
+  }
+  
+  private func giveUsTheData(){
+    NasaAPIClient.getPhoto { (error, data) in
+      if let error = error {
+        print(error.errorMessage())
+      } else  if let  data = data {
+        self.resultPicture = data.photos
+        
+        for i in self.resultPicture {
+          ImageHelper.thePicture(stringUrl: i.img_src) { (error, onLineImage) in
+            if let onLineImage = onLineImage {
+              self.pictures.append(onLineImage)
+            }
+          }
         }
-        
-    }
-    }
-
-
-    @IBOutlet weak var myTableView: UITableView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        giveUsTheData()
-        myTableView.dataSource = self
-        title = "NASA Images"
-        
+      }
     }
     
-    private func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        //create an ok action
-        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        
-        alertController.addAction(okAction)
-        
-        //present the alert controller
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    private func giveUsTheData(){
-        NasaAPIClient.getPhoto { (error, data) in
-            if let error = error {
-                print(error.errorMessage())
-            } else  if let  data = data {
-                self.resultPicture = data.photos
-                
-                for i in self.resultPicture {
-                ImageHelper.thePicture(stringUrl: i.img_src) { (error, onLineImage) in
-                    if let onLineImage = onLineImage {
-                    self.pictures.append(onLineImage)
-                    }
-                    }
-                }
-        }
-    }
-
-}
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? DetailedViewController else { return }
-        let storedInfo = resultPicture[myTableView.indexPathForSelectedRow!.row]
-        destination.currentPhoto = storedInfo
-        guard let photoDestination = segue.destination as? DetailedViewController else { return }
-        let storedPicture = pictures[myTableView.indexPathForSelectedRow!.row]
-       photoDestination.currentNasaImage = storedPicture
-    }
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let indexPath = myTableView.indexPathForSelectedRow,
+      let destination = segue.destination as? DetailedViewController else { fatalError("indexPath, detailVC nil") }
+    let dataToSend = resultPicture[indexPath.row]
+    let imageToSend = pictures[indexPath.row]
+    destination.pictureData = dataToSend
+    destination.currentNasaImage = imageToSend
+  }
 }
 
-extension PicturesViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pictures.count
-    }
+extension PicturesViewController: UITableViewDataSource, UITableViewDelegate {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return pictures.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "PicturesCell", for: indexPath) as? PicturesCell else { return UITableViewCell() }
+    let singleObject = resultPicture[indexPath.row]
+    let singleImage = pictures[indexPath.row]
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = myTableView.dequeueReusableCell(withIdentifier:"NiceCell", for: indexPath)
-        let images = resultPicture[indexPath.row]
-        let imagesToSet = pictures[indexPath.row]
-       cell.textLabel?.text = ("Camera \(images.camera.name)")
-        cell.detailTextLabel?.text = "Sol \(images.sol)"
-        cell.imageView?.image = imagesToSet
-            
-        
-        return cell
-    }
+    cell.NasaImage.image = singleImage
+    cell.writenData.text = ("Camera \(singleObject.camera.name)")
+    cell.solsTextLabel.text = "Sol \(singleObject.sol)"
     
-    
+    return cell
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 400
+  }
+  
 }
 

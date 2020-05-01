@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,29 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="spaceLaunchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="QHT-va-6QX">
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceLaunchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="QHT-va-6QX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <color key="tintColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nasaIcon" translatesAutoresizingMaskIntoConstraints="NO" id="pbN-GM-sfL">
-                                <rect key="frame" x="62" y="114" width="251" height="199"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nasaIcon" translatesAutoresizingMaskIntoConstraints="NO" id="pbN-GM-sfL">
+                                <rect key="frame" x="62.5" y="180" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="r2C-D6-3gC"/>
+                                    <constraint firstAttribute="width" constant="250" id="xsx-Wl-uFu"/>
+                                </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="In this app you'll find live images from multiple NASA devices, as well as the picture of the day. " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xhs-cW-adc">
-                                <rect key="frame" x="38" y="455" width="299" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="pbN-GM-sfL" firstAttribute="centerX" secondItem="QHT-va-6QX" secondAttribute="centerX" id="6sh-15-eTH"/>
+                            <constraint firstAttribute="trailing" secondItem="QHT-va-6QX" secondAttribute="trailing" id="8fc-IL-S2N"/>
                             <constraint firstItem="QHT-va-6QX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AiN-kB-uUO"/>
+                            <constraint firstItem="QHT-va-6QX" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="LQm-rg-cDK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QHT-va-6QX" secondAttribute="trailing" id="Rdd-wl-RsL"/>
                             <constraint firstItem="QHT-va-6QX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Slx-SC-Vhs"/>
+                            <constraint firstItem="pbN-GM-sfL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="180" id="bCu-dz-MS3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QHT-va-6QX" secondAttribute="bottom" id="jzB-HV-aGX"/>
+                            <constraint firstAttribute="bottom" secondItem="QHT-va-6QX" secondAttribute="bottom" id="wOB-Fs-oRf"/>
+                            <constraint firstItem="QHT-va-6QX" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="xPt-pa-ORN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

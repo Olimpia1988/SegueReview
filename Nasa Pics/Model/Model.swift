@@ -1,11 +1,3 @@
-//
-//  Model.swift
-//  Nasa Pics
-//
-//  Created by Olimpia on 12/30/18.
-//  Copyright © 2018 Olimpia. All rights reserved.
-//
-
 import Foundation
 
 struct NasaPhotos: Codable {
