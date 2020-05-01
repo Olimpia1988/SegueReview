@@ -80,5 +80,10 @@ extension PicturesViewController: UITableViewDataSource, UITableViewDelegate {
     return 400
   }
   
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     let destination = DetailedViewController()
+    navigationController?.pushViewController(destination, animated: false)
+  }
+  
 }
 
