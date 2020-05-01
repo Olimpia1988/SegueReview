@@ -16,7 +16,7 @@ class PicturesViewController: UIViewController {
   private var pictures = [UIImage](){
     didSet {
       DispatchQueue.main.async {
-        self.myTableView.reloadData() 
+        self.myTableView.reloadData()
         
       }
       
@@ -56,14 +56,7 @@ class PicturesViewController: UIViewController {
     
   }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    guard let indexPath = myTableView.indexPathForSelectedRow,
-      let destination = segue.destination as? DetailedViewController else { fatalError("indexPath, detailVC nil") }
-    let dataToSend = resultPicture[indexPath.row]
-    let imageToSend = pictures[indexPath.row]
-    destination.pictureData = dataToSend
-    destination.currentNasaImage = imageToSend
-  }
+  
 }
 
 extension PicturesViewController: UITableViewDataSource, UITableViewDelegate {
