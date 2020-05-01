@@ -56,6 +56,19 @@ class PicturesViewController: UIViewController {
     
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "segueToDetailVC" {
+     
+      guard let indexPath = myTableView.indexPathForSelectedRow,
+        let destination = segue.destination as? DetailedViewController
+      else { fatalError() }
+      let singleObject = resultPicture[indexPath.row]
+      let imageToSend = pictures[indexPath.row]
+      destination.pictureData = singleObject
+      destination.currentNasaImage = imageToSend
+    } 
+  }
+  
   
 }
 

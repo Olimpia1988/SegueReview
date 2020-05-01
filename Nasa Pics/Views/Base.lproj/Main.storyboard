@@ -68,6 +68,7 @@
                                             <outlet property="NasaImage" destination="Rya-Fc-KAd" id="idB-Ba-2EE"/>
                                             <outlet property="solsTextLabel" destination="NuP-cm-Rl1" id="ZFW-Ik-hEz"/>
                                             <outlet property="writenData" destination="JDA-Oj-wuX" id="cVd-LB-EJK"/>
+                                            <segue destination="ks1-m2-vXu" kind="show" identifier="segueToDetailVC" id="be6-j4-2nw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -199,13 +200,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HQk-6d-xJC">
-                                <rect key="frame" x="0.0" y="44" width="375" height="488"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="488"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="488" id="AZB-8c-Lfo"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18n-cf-HwW">
-                                <rect key="frame" x="49" y="599" width="87" height="47"/>
+                                <rect key="frame" x="49" y="643" width="87" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="Bs1-Bx-TS8"/>
                                     <constraint firstAttribute="height" constant="47" id="taF-BK-ef6"/>
@@ -215,7 +216,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jH8-EC-EpO">
-                                <rect key="frame" x="235" y="599" width="87" height="47"/>
+                                <rect key="frame" x="235" y="643" width="87" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="FsW-eV-P0j"/>
                                     <constraint firstAttribute="width" constant="87" id="oCQ-8B-S60"/>
